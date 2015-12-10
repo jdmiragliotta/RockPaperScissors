@@ -20,7 +20,7 @@ $(document).ready(function(){
   function comparisons(){
     // Rock
     if (userChoice === computerChoice){
-      alert("Ties");
+      $('#myModal').modal('show')
       
     }else if (userChoice === "rock" && computerChoice === "paper"){
       computerScore++;
