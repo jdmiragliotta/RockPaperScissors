@@ -1,26 +1,58 @@
 $(document).ready(function(){
-
-  var choiceOptions = ["rock", "paper", "scissor"];
+  var userChoice;
+  var computerChoice;
   var userScore = 0;
-  var computerScore = 0; 
+  var computerScore = 0;
+  var roundCounter = 1;
+  var computerOptions = [
+    "rock",
+    "paper",
+    "scissors"
+  ];
 
-  $("#rock", "#paper", "#scissor").on("click", function(){
-    var userChoice = $(this).data("choice");
-  });
-
-// The computer chooses RPS when button is clicked
-  function computerChoice(uc){
-    var computerChoice = choiceOptions[Math.floor(Math.random() * choiceOptions.length)];
-    $("#rock", "#paper", "#scissor").on("click", function(){
-      var userChoice = $(this).data("choice");
+  $(".btn-success").on("click", function(){
+      userChoice = $(this).attr("data-choice");
+      computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+      comparisons();
+      console.log(userChoice, computerChoice);
     });
 
-  }
+  function comparisons(){
+    // Rock
+    if (userChoice === computerChoice){
+      alert("Ties");
+      
+    }else if (userChoice === "rock" && computerChoice === "paper"){
+      computerScore++;
+      $(".computerScore").html(computerScore);
+     
+    }else if (userChoice === "paper" && computerChoice === "scissor"){
+      computerScore++;
+      $(".computerScore").html(computerScore);
+      
+    }else if (userChoice === "scissors" && computerChoice === "rock"){
+      computerScore++;
+      $(".computerScore").html(computerScore);
+     
+    }else if (userChoice === "paper" && computerChoice === "rock"){
+      userScore++;
+      $(".yourScore").html(userScore);
+      
+    }else if (userChoice === "scissors" && computerChoice === "paper"){
+      userScore++;
+      $(".yourScore").html(userScore);
+      
+    }else if (userChoice === "rock" && computerChoice === "scissors"){
+      userScore++;
+      $(".yourScore").html(userScore);  
+    }
 
-// Compare the userChoice with computerChoice using if else statement
+    roundCounter+=1;
+    $(".roundCounter").html(roundCounter);  
+  };
+
 
   
-
 
 
 });
