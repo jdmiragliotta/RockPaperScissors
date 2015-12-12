@@ -18,6 +18,7 @@ $(document).ready(function(){
       computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
       comparisons();
       $(".animation-area").removeClass("load").fadeOut(2000);
+      animateSequence();
       bindControls();
       
     });
@@ -88,11 +89,50 @@ $(document).ready(function(){
             fa-hand-spock-o"
           ).show();
 
+      }else if(userChoice === "paper"){
+        $("#choice")
+          .addClass("fa-hand-" +userChoice+"-o")
+          .removeClass("fa-hand-rock-o\
+            fa-hand-scissors-o\
+            fa-hand-lizard-o\
+            fa-hand-spock-o"
+          ).show();
+      }else if(userChoice === "scissors"){
+        $("#choice")
+          .addClass("fa-hand-" +userChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-rock-o\
+            fa-hand-lizard-o\
+            fa-hand-spock-o"
+          ).show();
+
+      }else if(userChoice === "lizard"){
+        $("#choice")
+          .addClass("fa-hand-" +userChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-scissors-o\
+            fa-hand-rock-o\
+            fa-hand-spock-o"
+          ).show();
+
+      }else if(userChoice === "spock"){
+        $("#choice")
+          .addClass("fa-hand-" +userChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-scissors-o\
+            fa-hand-lizard-o\
+            fa-hand-rock-o"
+          ).show();
       };
     };
     revealUserChoice();
   };
+
+  function animationSequence(){
+    $("#rock-choice").addClass(".slideLeft").delay(2000).fadeOut(2000);
+  };
   
+
 
 
 });
