@@ -17,15 +17,15 @@ $(document).ready(function(){
       userThrow = $(this).attr("class");
       computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
       comparisons();
-      $(".animation-area").removeClass("load").fadeOut(3000);
-
+      $(".animation-area").removeClass("load").fadeOut(2000);
+      bindControls();
       
     });
 
   function comparisons(){
     // Tie
     if (userChoice === computerChoice){
-      $('#myModal').modal('show')
+      
 
     // Computer Wins Scenerios 
 
@@ -76,6 +76,22 @@ $(document).ready(function(){
   };
 
 
+
+  function bindControls(){
+    function revealUserChoice(){
+      if(userChoice === "rock"){
+        $("#choice")
+          .addClass("fa-hand-" +userChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-scissors-o\
+            fa-hand-lizard-o\
+            fa-hand-spock-o"
+          ).show();
+
+      };
+    };
+    revealUserChoice();
+  };
   
 
 

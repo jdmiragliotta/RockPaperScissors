@@ -1,5 +1,4 @@
 body {
-  
   font-family: 'Roboto', sans-serif;
 }
 
@@ -206,5 +205,29 @@ body {
   left: 200px;
   display: none;
 }
+
+
+.userName {
+  position: absolute;
+  z-index: 6;
+  top: 252px;
+  left: 212px;
+  height: 15px;
+  width: 100px;
+  color: white;
+  font-size: 14px;
+}
+
+#choice{
+  height: 200px;
+  width: 200px;
+  z-index: 6;
+  position: absolute;
+  top: 48px;
+  left: 147px;
+  font-size: 120px;
+  color: white;
+}
+
 
 
