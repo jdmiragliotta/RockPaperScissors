@@ -1,3 +1,210 @@
+body {
+  
+  font-family: 'Roboto', sans-serif;
+}
+
 .rock-pic, .paper-pic{
   display: none;
 }
+
+.console{
+  border-radius: 154px;
+  height: 309px;
+  width: 808px;
+  background-color: black;
+  position: absolute;
+}
+.top-console{
+  border-radius: 18px;
+  height: 41px;
+  width: 475px;
+  top: -10px;
+  right: 126px;
+  background-color: black;
+  position: absolute;
+  z-index: 2;
+}
+
+.bottom-console {
+  border-radius: 10px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: 40px;
+  width: 475px;
+  top: 292px;
+  right: 126px;
+  background-color: #000;
+  position: absolute;
+  z-index: 2;
+}
+
+.back-screen {
+  height: 266px;
+  width: 420px;
+  z-index: 4;
+  background-color: #333;
+  position: absolute;
+  top: 10px;
+  right: 154px;
+}
+
+.animation-area{
+  height: 260px;
+  width: 414px;
+  z-index: 5;
+  position: absolute;
+  top: 10px;
+  right: 154px;
+  
+}
+
+.rock-btn, .paper-btn, .scissors-btn, .lizard-btn, .spock-btn{
+  border: 1px solid #555;
+  border-radius: 200px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  background-color: #252222;
+}
+
+.button-inset{
+  height: 130px;
+  width: 130px;
+  border-radius: 100px;
+  background: rgb(51,51,51); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(20,20,20,1) 0%, rgba(50,50,50,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(20,20,20,1) 0%,rgba(50,50,50,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(20,20,20,1) 0%,rgba(50,50,50,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#5b5b5b',GradientType=0 ); /* IE6-9 */
+  position: absolute;
+  right: -7px;
+  top: 97px;
+  z-index: 1;
+}
+
+#rock-button {
+  position: absolute;
+  right: 97px;
+  top: 124px;
+  z-index: 2;
+  outline: none;
+}
+
+.rock-text{
+  z-index: 3;
+  font-size: 25px;
+  font-weight: 200;
+  color: white;
+}
+#paper-button{
+  position: absolute;
+  right: 36px;
+  top: 81px;
+  z-index: 2;
+  outline: none;
+}
+
+.paper-text{
+  z-index: 3;
+  font-size: 22px;
+  font-weight: 200;
+  color: white;
+}
+
+#scissors-button{
+  position: absolute;
+  right: -22px;
+  top: 124px;
+  z-index: 2;
+  outline: none;
+}
+
+.scissors-text{
+  padding-top: 4px;
+  z-index: 3;
+  font-size: 22px;
+  font-weight: 200;
+  color: white;
+}
+
+#lizard-button{
+  position: absolute;
+  right: -2px;
+  top: 193px;
+  z-index: 2;
+  outline: none;
+}
+
+.lizard-text{
+  z-index: 3;
+  font-size: 20px;
+  font-weight: 200;
+  color: white;
+  padding-top: 5px;
+}
+
+#spock-button{
+  position: absolute;
+  right: 70px;
+  top: 193px;
+  z-index: 2;
+  outline: none;
+}
+
+.spock-text{
+  z-index: 3;
+  font-size: 22px;
+  font-weight: 200;
+  color: white;
+  padding-top: 2px;
+}
+
+.start{
+  border-radius: 17px;
+  color: #fff;
+  background-color: #171616;
+  border-color: #fff;
+  font-size: 10px;
+  position: absolute;
+  z-index: 3;
+  top: 300px;
+  right: 150px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.start:hover, .start:active, .start:focus {
+  color: white;
+  outline: none;
+}
+
+.load {
+  display: none;
+
+}
+.wait {
+  position: absolute;
+  z-index: 5;
+  top: 48px;
+  right: 147px;
+  font-size: 120px;
+  color: white;
+  
+}
+
+.load-text{
+  color: white;
+  top: 188px;
+  position: absolute;
+  left: 91px;
+  font-size: 24px;
+}
+
+.sequence{
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  display: none;
+}
+
+
