@@ -12,16 +12,23 @@ $(document).ready(function(){
     "spock"
   ];
 
+  // Hide msgs
+  //$("#gameplay-panel, #pause-screen").hide();
+  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice").hide();
+  $("#reveal-screen, #name-form-div, #end-of-round-screen").hide();
+  $("#game-over-screen").hide();
+
   $(".user-choice").on("click", function(){
       userChoice = $(this).attr("data-choice");
       userThrow = $(this).attr("class");
       computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
       comparisons();
-      $(".animation-area").removeClass("load").fadeOut(2000);
-      animateSequence();
+      $(".chooseWeapon").removeClass("load").fadeOut(2000, animationSequence());
+      //animationSequence();
       bindControls();
       
     });
+
 
   function comparisons(){
     // Tie
@@ -129,10 +136,15 @@ $(document).ready(function(){
   };
 
   function animationSequence(){
-    $("#rock-choice").addClass(".slideLeft").delay(2000).fadeOut(2000);
+    
+    $("#rock-choice").delay(2000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
+    $("#paper-choice").delay(2500).addClass("slideRight").show(1).delay(500).fadeOut(100);
+    $("#scissors-choice").delay(3000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
+    $("#lizard-choice").delay(3500).addClass("slideRight").show(1).delay(500).fadeOut(100);
+    $("#spock-choice").delay(4000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
   };
   
-
+  
 
 
 });
