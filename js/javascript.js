@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   // Hide msgs
   //$("#gameplay-panel, #pause-screen").hide();
-  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice").hide();
+  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice").hide();
   $("#reveal-screen, #name-form-div, #end-of-round-screen").hide();
   $("#game-over-screen").hide();
 
@@ -23,8 +23,9 @@ $(document).ready(function(){
       userThrow = $(this).attr("class");
       computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
       comparisons();
-      $(".chooseWeapon").removeClass("load").fadeOut(2000, animationSequence());
-    
+      $(".chooseWeapon").removeClass("load").fadeOut(2000);
+      
+      animationSequence();
       bindControls();
       
     });
@@ -94,7 +95,7 @@ $(document).ready(function(){
             fa-hand-scissors-o\
             fa-hand-lizard-o\
             fa-hand-spock-o"
-          ).show();
+          );
 
       }else if(userChoice === "paper"){
         $("#choice")
@@ -103,7 +104,7 @@ $(document).ready(function(){
             fa-hand-scissors-o\
             fa-hand-lizard-o\
             fa-hand-spock-o"
-          ).show();
+          );
       }else if(userChoice === "scissors"){
         $("#choice")
           .addClass("fa-hand-" +userChoice+"-o")
@@ -111,7 +112,7 @@ $(document).ready(function(){
             fa-hand-rock-o\
             fa-hand-lizard-o\
             fa-hand-spock-o"
-          ).show();
+          );
 
       }else if(userChoice === "lizard"){
         $("#choice")
@@ -120,7 +121,7 @@ $(document).ready(function(){
             fa-hand-scissors-o\
             fa-hand-rock-o\
             fa-hand-spock-o"
-          ).show();
+          );
 
       }else if(userChoice === "spock"){
         $("#choice")
@@ -129,10 +130,58 @@ $(document).ready(function(){
             fa-hand-scissors-o\
             fa-hand-lizard-o\
             fa-hand-rock-o"
-          ).show();
+          );
+      };
+    };
+
+    function revealComputerChoice(){
+      if(computerChoice === "rock"){
+        $("#computerChoice")
+          .addClass("fa-hand-" +computerChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-scissors-o\
+            fa-hand-lizard-o\
+            fa-hand-spock-o"
+          );
+
+      }else if(computerChoice === "paper"){
+        $("#computerChoice")
+          .addClass("fa-hand-" +computerChoice+"-o")
+          .removeClass("fa-hand-rock-o\
+            fa-hand-scissors-o\
+            fa-hand-lizard-o\
+            fa-hand-spock-o"
+          );
+      }else if(computerChoice === "scissors"){
+        $("#computerChoice")
+          .addClass("fa-hand-" +computerChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-rock-o\
+            fa-hand-lizard-o\
+            fa-hand-spock-o"
+          );
+
+      }else if(computerChoice === "lizard"){
+        $("#computerChoice")
+          .addClass("fa-hand-" +computerChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-scissors-o\
+            fa-hand-rock-o\
+            fa-hand-spock-o"
+          );
+
+      }else if(computerChoice === "spock"){
+        $("#computerChoice")
+          .addClass("fa-hand-" +computerChoice+"-o")
+          .removeClass("fa-hand-paper-o\
+            fa-hand-scissors-o\
+            fa-hand-lizard-o\
+            fa-hand-rock-o"
+          );
       };
     };
     revealUserChoice();
+    revealComputerChoice();
   };
 
   function animationSequence(){
@@ -142,7 +191,10 @@ $(document).ready(function(){
     $("#scissors-choice").delay(3500).addClass("slideLeft").show(1).delay(500).fadeOut(100);
     $("#lizard-choice").delay(4250).addClass("slideRight").show(1).delay(500).fadeOut(100);
     $("#spock-choice").delay(5000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
-    $("#bang-choice").delay(5750).addClass("bang-img fadeIn").show(2).delay(1500).fadeOut(2000);
+    $("#bang-choice").delay(5750).addClass("fadeIn").show(2).delay(1500).fadeOut(200);
+    $("#revealUserChoice").delay(7500).addClass("slideRight").show(2);
+    $("#revealComputerChoice").delay(7500).addClass("slideLeft").show(2);
+    
 
   };
   

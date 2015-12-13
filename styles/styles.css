@@ -1,5 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
+  color:white;
 }
 
 .rock-pic, .paper-pic{
@@ -40,6 +41,7 @@ body {
 .back-screen {
   height: 266px;
   width: 420px;
+  background-image: url("../images/background.jpg");
   z-index: 4;
   background-color: #333;
   position: absolute;
@@ -258,8 +260,6 @@ body {
   background-image: url("../images/bang.png");
 }
 
-
-
 .sequence-text{
   z-index: 6;
   position: absolute;
@@ -295,7 +295,28 @@ body {
 #choice {
   z-index: 6;
   position: absolute;
-  top: 50px;
-  left: 40px;
-  
+  top: 70px;
+  left: 40px; 
 }
+
+#computerChoice {
+  z-index: 6;
+  position: absolute;
+  top: 70px;
+  right: 63px;
+}
+
+#youThrew {
+  color: white;
+  top: 40px;
+  left: 80px;
+  position: absolute;
+  font-size: 18px;
+}
+
+  #sheldon {
+    color: white;
+    top: 40px;
+    right: 82px;
+    position: absolute;
+    font-size: 18px;
