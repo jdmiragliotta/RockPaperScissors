@@ -3,7 +3,7 @@ $(document).ready(function(){
   var computerChoice;
   var userScore = 0;
   var computerScore = 0;
-  var roundCounter = 1;
+  var roundCounter = 0;
   var computerOptions = [
     "rock",
     "paper",

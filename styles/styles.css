@@ -314,9 +314,24 @@ body {
   font-size: 18px;
 }
 
-  #sheldon {
-    color: white;
-    top: 40px;
-    right: 82px;
-    position: absolute;
-    font-size: 18px;
+#sheldon {
+  color: white;
+  top: 40px;
+  right: 82px;
+  position: absolute;
+  font-size: 18px;
+}
+
+.round{
+  position: absolute;
+  z-index: 6;
+  top: 12px;
+  left: 212px;
+}
+
+.sheldon-cpu {
+  position: absolute;
+  z-index: 6;
+  top: 12px;
+  right: 157px;
+}
