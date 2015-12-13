@@ -226,7 +226,7 @@ body {
 }
 
 #rock-choice{
-  top: 59px;
+  top: 50px;
   left: 147px;
 }
 
@@ -249,6 +249,16 @@ body {
   top: 50px;
   left: 140px;
 }
+
+#bang-choice{
+  top: 50px;
+  left: 140px;
+  height: 128px;
+  width: 128px;
+  background-image: url("../images/bang.png");
+}
+
+
 
 .sequence-text{
   z-index: 6;
@@ -278,3 +288,14 @@ body {
   left: 18px;
 }
 
+#bang-seq-text {
+  left: 26px; 
+}
+
+#choice {
+  z-index: 6;
+  position: absolute;
+  top: 50px;
+  left: 40px;
+  
+}
