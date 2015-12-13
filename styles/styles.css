@@ -219,14 +219,62 @@ body {
 }
 
 .choice{
-  height: 200px;
-  width: 200px;
   z-index: 6;
   position: absolute;
-  top: 48px;
-  left: 147px;
   font-size: 120px;
   color: white;
 }
 
+#rock-choice{
+  top: 59px;
+  left: 147px;
+}
+
+#paper-choice{
+  top:50px;
+  left: 147px;
+}
+
+#scissors-choice{
+  top: 50px;
+  left: 147px;
+}
+
+#lizard-choice{
+  top: 50px;
+  left: 137px;
+}
+
+#spock-choice{
+  top: 50px;
+  left: 140px;
+}
+
+.sequence-text{
+  z-index: 6;
+  position: absolute;
+  top: 130px;
+  font-size: 30px;
+  color: white;
+}
+
+#rock-seq-text {
+  left: 10px; 
+}
+
+#paper-seq-text {
+  left: 11px;
+}
+
+#scissors-seq-text {
+  left: -8px;
+}
+
+#lizard-seq-text {
+  left: 21px;
+}
+
+#spock-seq-text {
+  left: 18px;
+}
 
