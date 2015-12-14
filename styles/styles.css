@@ -203,7 +203,7 @@ header {
   padding-top: 2px;
 }
 
-.start{
+.start, .reset{
   border-radius: 17px;
   color: #fff;
   background-color: #171616;
@@ -217,7 +217,11 @@ header {
   padding-bottom: 2px;
 }
 
-.start:hover, .start:active, .start:focus {
+.reset{
+  left: 206px;
+}
+
+.start:hover, .start:active, .start:focus, .reset:hover, .reset:active, .reset:focus {
   color: white;
   outline: none;
 }

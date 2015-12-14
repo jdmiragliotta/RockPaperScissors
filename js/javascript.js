@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   // Hide msgs
   
-  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain #userwinner, #computerwinner, #user-go-screen, #computer-go-screen").hide();
+  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain, #userwinner, #computerwinner, #user-go-screen, #computer-go-screen").hide();
 
   $(".user-choice").on("click", function (){
       userChoice = $(this).attr("data-choice");
@@ -196,7 +196,7 @@ $(document).ready(function(){
     $("#revealUserChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
     $("#revealComputerChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
     $("#revealWinner").delay(6500).addClass("fadeIn revealwinner").show(2).delay(3000).fadeOut(1000);
-    //$("#chooseAgain").delay(9000).html("Choose Again").fadeIn(1000).show(2).delay(2000).hide();
+    $("#chooseAgain").delay(9000).fadeIn(1000).show(2).delay(2000).hide();
   };
 
   
@@ -238,12 +238,12 @@ $(document).ready(function(){
   }; 
 
   function determineWinner(){
-    if(computerScore === 1){
-      $("#chooseAgain").hide();
+    if(computerScore === 5){
       $("#computer-go-screen").fadeIn(500);
       $("#computerwinner").fadeIn(2000);
-    }else if(userScore === 1){
-      $("#chooseAgain").hide();
+
+
+    }else if(userScore === 5){   
       $("#user-go-screen").fadeIn(500);
       $("#userwinner").fadeIn(2000);
     }

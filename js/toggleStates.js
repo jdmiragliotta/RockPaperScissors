@@ -6,7 +6,16 @@ $(document).ready(function() {
         $(".off-screen").fadeOut(2000);
         $(".load").delay(500).fadeIn(500);
       }
-      
+      enableAnimation();
+    });
+
+    $("#resetBtn").on("click", function() {
+      if($(this).attr("data-status") === "on") {
+        $(".user-choice").prop("disabled", false);
+        $(this).removeClass("pulse");
+        $(".off-screen").fadeOut(2000);
+        $(".load").delay(500).fadeIn(500);
+      }
       enableAnimation();
     });
   
