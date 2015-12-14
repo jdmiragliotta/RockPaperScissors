@@ -188,7 +188,7 @@ $(document).ready(function(){
   };
 
   function animationSequence(){
-    $(".user-choice").off();
+    
     $("#rock-choice").delay(1000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
     $("#paper-choice").delay(1750).addClass("slideRight").show(1).delay(500).fadeOut(100);
     $("#scissors-choice").delay(2500).addClass("slideLeft").show(1).delay(500).fadeOut(100);
@@ -241,35 +241,50 @@ $(document).ready(function(){
   }; 
 
   function determineWinner(){
-    if(computerScore === 5){
-     
+    if(computerScore === 1){
       $("#computer-go-screen").fadeIn(500);
-      $("#computerwinner").fadeIn(2000);
-      $(".compReset").on("click", function(){
-       
+      $("#computerwinner").fadeIn(500);
+      $("#resetBtn").on("click", function(){
+        $("#chooseAgain").hide();
         $("#computer-go-screen").fadeOut(1000);
         userScore = 0;
         computerScore = 0;
         roundCounter = 0;
         $(".load").show();
+        $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
+        $("#c-two").removeClass("fa-star").addClass("fa-star-o");
+        $("#c-three").removeClass("fa-star").addClass("fa-star-o");
+        $("#c-four").removeClass("fa-star").addClass("fa-star-o");
+        $("#c-five").removeClass("fa-star").addClass("fa-star-o");
       });
-
-    }else if(userScore === 5){  
+    
+    }else if(userScore === 1){  
       $("#user-go-screen").fadeIn(500);
-      $("#userwinner").fadeIn(2000);
-      $(".userReset").on("click", function(){
-       
-        $("user-go-screen").fadeOut(1000);
+      $("#userwinner").fadeIn(500);
+      $("#resetBtn").on("click", function(){
+        $("#chooseAgain").hide();
+        $("#user-go-screen").fadeOut(1000);
         userScore = 0;
         computerScore = 0;
         roundCounter = 0;
         $(".load").show();
+        $("#y-one").removeClass("fa-star").addClass("fa-star-o");  
+        $("#y-two").removeClass("fa-star").addClass("fa-star-o");
+        $("#y-three").removeClass("fa-star").addClass("fa-star-o");
+        $("#y-four").removeClass("fa-star").addClass("fa-star-o");
+        $("#y-five").removeClass("fa-star").addClass("fa-star-o");
+    
+
+
       });
-    };
   };
+
+};
+
   determineWinner();
-
-
+ 
+  
+  
 });
 
 
