@@ -184,11 +184,11 @@ $(document).ready(function(){
     };
     revealUserChoice();
     revealComputerChoice();
-   
+    
   };
 
   function animationSequence(){
-    //$(".user-choice").off().removeClass("pulse");
+    $(".user-choice").off();
     $("#rock-choice").delay(1000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
     $("#paper-choice").delay(1750).addClass("slideRight").show(1).delay(500).fadeOut(100);
     $("#scissors-choice").delay(2500).addClass("slideLeft").show(1).delay(500).fadeOut(100);
@@ -199,6 +199,7 @@ $(document).ready(function(){
     $("#revealComputerChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
     $("#revealWinner").delay(6500).addClass("fadeIn revealwinner").show(2).delay(3000).fadeOut(1000);
     $("#chooseAgain").delay(9500).fadeIn(1000).show(2).delay(2000).hide();
+    
   };
 
   
@@ -236,23 +237,36 @@ $(document).ready(function(){
 
     updateComputer();
     updateUser();
-    
+
   }; 
 
   function determineWinner(){
-    if(computerScore === 5){
-      $("#chooseAgain").hide();
+    if(computerScore === 1){
+     
       $("#computer-go-screen").fadeIn(500);
       $("#computerwinner").fadeIn(2000);
+      $(".compReset").on("click", function(){
+       
+        $("#computer-go-screen").fadeOut(1000);
+        userScore = 0;
+        computerScore = 0;
+        roundCounter = 0;
+        $(".load").show();
+      });
 
-
-    }else if(userScore === 5){  
-      $("#chooseAgain").hide(); 
+    }else if(userScore === 1){  
       $("#user-go-screen").fadeIn(500);
       $("#userwinner").fadeIn(2000);
-    }
+      $(".userReset").on("click", function(){
+       
+        $("user-go-screen").fadeOut(1000);
+        userScore = 0;
+        computerScore = 0;
+        roundCounter = 0;
+        $(".load").show();
+      });
+    };
   };
-
   determineWinner();
 
 
