@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   // Hide msgs
   
-  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain, #userwinner, #computerwinner, #user-go-screen, #computer-go-screen").hide();
+  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain, #userwinner, #computerwinner, #user-go-screen, #computer-go-screen, #chooseWeapon").hide();
 
   $(".user-choice").on("click", function (){
       userChoice = $(this).attr("data-choice");
@@ -241,7 +241,7 @@ $(document).ready(function(){
   }; 
 
   function determineWinner(){
-    if(computerScore === 1){
+    if(computerScore === 5){
       $("#computer-go-screen").fadeIn(500);
       $("#computerwinner").fadeIn(500);
       $("#resetBtn").on("click", function(){
@@ -250,7 +250,7 @@ $(document).ready(function(){
         userScore = 0;
         computerScore = 0;
         roundCounter = 0;
-        $(".load").show();
+        $("#chooseWeapon").fadeIn(500);
         $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
         $("#c-two").removeClass("fa-star").addClass("fa-star-o");
         $("#c-three").removeClass("fa-star").addClass("fa-star-o");
@@ -258,7 +258,7 @@ $(document).ready(function(){
         $("#c-five").removeClass("fa-star").addClass("fa-star-o");
       });
     
-    }else if(userScore === 1){  
+    }else if(userScore === 5){  
       $("#user-go-screen").fadeIn(500);
       $("#userwinner").fadeIn(500);
       $("#resetBtn").on("click", function(){
@@ -267,7 +267,7 @@ $(document).ready(function(){
         userScore = 0;
         computerScore = 0;
         roundCounter = 0;
-        $(".load").show();
+        $("#chooseWeapon").fadeIn(500);
         $("#y-one").removeClass("fa-star").addClass("fa-star-o");  
         $("#y-two").removeClass("fa-star").addClass("fa-star-o");
         $("#y-three").removeClass("fa-star").addClass("fa-star-o");
