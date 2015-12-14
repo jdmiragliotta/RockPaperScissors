@@ -241,7 +241,7 @@ $(document).ready(function(){
   }; 
 
   function determineWinner(){
-    if(computerScore === 1){
+    if(computerScore === 5){
      
       $("#computer-go-screen").fadeIn(500);
       $("#computerwinner").fadeIn(2000);
@@ -254,7 +254,7 @@ $(document).ready(function(){
         $(".load").show();
       });
 
-    }else if(userScore === 1){  
+    }else if(userScore === 5){  
       $("#user-go-screen").fadeIn(500);
       $("#userwinner").fadeIn(2000);
       $(".userReset").on("click", function(){
