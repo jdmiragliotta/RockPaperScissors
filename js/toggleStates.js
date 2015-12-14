@@ -4,7 +4,7 @@ $(document).ready(function() {
         $(".user-choice").prop("disabled", false);
         $(this).removeClass("pulse");
         $(".off-screen").fadeOut(2000);
-        $(".load").delay(2000).fadeIn(3000);
+        $(".load").delay(500).fadeIn(500);
       }
       
       enableAnimation();

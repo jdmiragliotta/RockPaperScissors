@@ -3,10 +3,6 @@ body {
   color:white;
 }
 
-.rock-pic, .paper-pic{
-  display: none;
-}
-
 .console{
   border-radius: 154px;
   height: 309px;
@@ -344,7 +340,7 @@ body {
   right: 161px;
 }
 
-#revealWinner{
+#revealWinner, #chooseAgain{
   height: 50px;
   width: 423px;
   position: absolute;

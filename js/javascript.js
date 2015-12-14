@@ -14,21 +14,19 @@ $(document).ready(function(){
 
   // Hide msgs
   //$("#gameplay-panel, #pause-screen").hide();
-  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner").hide();
-  $("#reveal-screen, #name-form-div, #end-of-round-screen").hide();
-  $("#game-over-screen").hide();
+  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain").hide();
 
   $(".user-choice").on("click", function(){
       userChoice = $(this).attr("data-choice");
       userThrow = $(this).attr("class");
       computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
       comparisons();
-      $(".chooseWeapon").removeClass("load").fadeOut(2000);
+      $(".chooseWeapon").removeClass("load").fadeOut(700);
       
       animationSequence();
       bindControls();
-      
-      
+      setTimeout(updateScore, 10000);
+       
     });
 
 
@@ -80,8 +78,8 @@ $(document).ready(function(){
     }else if (userChoice === "spock" && (computerChoice === "scissors" || computerChoice === "rock")){
       userScore++;
       $(".revealwinner").html("You won!");
-    }
-    setInterval(updateScore, 10000);
+    };
+
     roundCounter+=1;
     $(".roundCounter").html(roundCounter);  
 
@@ -190,45 +188,58 @@ $(document).ready(function(){
 
   function animationSequence(){
     
-    $("#rock-choice").delay(2000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
-    $("#paper-choice").delay(2750).addClass("slideRight").show(1).delay(500).fadeOut(100);
-    $("#scissors-choice").delay(3500).addClass("slideLeft").show(1).delay(500).fadeOut(100);
-    $("#lizard-choice").delay(4250).addClass("slideRight").show(1).delay(500).fadeOut(100);
-    $("#spock-choice").delay(5000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
-    $("#bang-choice").delay(5750).addClass("fadeIn").show(2).delay(1500).fadeOut(200);
-    $("#revealUserChoice").delay(7500).addClass("slideRight").show(2);
-    $("#revealComputerChoice").delay(7500).addClass("slideLeft").show(2);
-    $("#revealWinner").delay(9000).addClass("fadeIn revealwinner").show(2);
-    $
+    $("#rock-choice").delay(1000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
+    $("#paper-choice").delay(1750).addClass("slideRight").show(1).delay(500).fadeOut(100);
+    $("#scissors-choice").delay(2500).addClass("slideLeft").show(1).delay(500).fadeOut(100);
+    $("#lizard-choice").delay(3250).addClass("slideRight").show(1).delay(500).fadeOut(100);
+    $("#spock-choice").delay(4000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
+    $("#bang-choice").delay(4750).addClass("fadeIn").show(2).delay(1500).fadeOut(200);
+    $("#revealUserChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
+    $("#revealComputerChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
+    $("#revealWinner").delay(6500).addClass("fadeIn revealwinner").show(2).delay(3000).fadeOut(1000);
+    $("#chooseAgain").delay(9000).html("Choose Again").fadeIn(1000).show(2).delay(2000).hide();
+
+    
+    
   };
   
-    function updateScore (){
-      
-        if(computerScore === 1){
-          $("#c-one").removeClass("fa-star-o").addClass("fa-star");  
-          }else if(computerScore === 2){
-            $("#c-two").removeClass("fa-star-o").addClass("fa-star");
-          }else if(computerScore === 3){
-            $("#c-three").removeClass("fa-star-o").addClass("fa-star");
-          }else if(computerScore === 4){
-            $("#c-four").removeClass("fa-star-o").addClass("fa-star");
-          }else if(computerScore === 5){
-            $("#c-five").removeClass("fa-star-o").addClass("fa-star");
-          }else if(userScore === 1){
+  function updateScore (){
+    function updateComputer(){
+      if(computerScore === 1){
+        $("#c-one").removeClass("fa-star-o").addClass("fa-star");  
+        }else if(computerScore === 2){
+          $("#c-two").removeClass("fa-star-o").addClass("fa-star");
+        }else if(computerScore === 3){
+          $("#c-three").removeClass("fa-star-o").addClass("fa-star");
+        }else if(computerScore === 4){
+          $("#c-four").removeClass("fa-star-o").addClass("fa-star");
+        }else if(computerScore === 5){
+          $("#c-five").removeClass("fa-star-o").addClass("fa-star");
+        };
+    }; 
+    
+    function updateUser(){
+      if(userScore === 1){
           $("#y-one").removeClass("fa-star-o").addClass("fa-star");  
-          }else if(userScore === 2){
-            $("#y-two").removeClass("fa-star-o").addClass("fa-star");
-          }else if(userScore === 3){
-            $("#y-three").removeClass("fa-star-o").addClass("fa-star");
-          }else if(userScore === 4){
-            $("#y-four").removeClass("fa-star-o").addClass("fa-star");
-          }else if(userScore === 5){
-            $("#y-five").removeClass("fa-star-o").addClass("fa-star");
-          };      
-    };   
+        }else if(userScore === 2){
+          $("#y-two").removeClass("fa-star-o").addClass("fa-star");
+        }else if(userScore === 3){
+          $("#y-three").removeClass("fa-star-o").addClass("fa-star");
+        }else if(userScore === 4){
+          $("#y-four").removeClass("fa-star-o").addClass("fa-star");
+        }else if(userScore === 5){
+          $("#y-five").removeClass("fa-star-o").addClass("fa-star");
+        };
+    };
 
-
-
+    updateComputer();
+    updateUser();   
+  }; 
 
 
 });
+
+
+
+
+

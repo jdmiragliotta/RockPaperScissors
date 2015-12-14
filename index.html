@@ -32,13 +32,15 @@
         <div class="bottom-console"></div>
         <button id="startBtn" class="btn start pulse" data-status="on">START</button>
         <div class="off-screen"></div>
+        
         <div class="animation-area">
+
           <div id="yourWins">
-            <span id="y-one" class=" fa fa-star-o"></span>
-            <span id="y-two"class="fa fa-star-o"></span>
-            <span id="y-three"class="fa fa-star-o"></span>
-            <span id="y-four"class="fa fa-star-o"></span>
-            <span id="y-five"class="fa fa-star-o"></span>
+            <span id="y-one" class="fa fa-star-o"></span>
+            <span id="y-two" class="fa fa-star-o"></span>
+            <span id="y-three" class="fa fa-star-o"></span>
+            <span id="y-four" class="fa fa-star-o"></span>
+            <span id="y-five" class="fa fa-star-o"></span>
           </div>
 
           <div id="sheldonWins">
@@ -54,31 +56,38 @@
             <span class="wait load fa fa-spinner fa-spin"></span>
             <p class="load load-text">Choose Your Weapon</p>
           </div>
-          
+
           <div id="revealUserChoice">
             <span id="choice" class="choice fa "></span>
             <p id="youThrew">YOU</p>
           </div>
+
           <div id="revealComputerChoice">
             <span id="computerChoice" class="choice fa "></span>
             <p id="sheldon">SHELDON</p>
           </div>
-
+      
           <span id="rock-choice" class="choice fa fa-hand-rock-o fa-5x "><p id="rock-seq-text" class="sequence-text">ROCK</p></span>
           <span id="paper-choice" class="choice fa fa-hand-paper-o fa-5x "><p id="paper-seq-text" class="sequence-text">PAPER</p></span>
           <span id="scissors-choice" class="choice fa fa-hand-scissors-o fa-5x "><p id="scissors-seq-text" class="sequence-text">SCISSORS</p></span>
           <span id="lizard-choice" class="choice fa fa-hand-lizard-o fa-5x "><p id="lizard-seq-text" class="sequence-text">LIZARD</p></span>
           <span id="spock-choice" class="choice fa fa-hand-spock-o fa-5x "><p id="spock-seq-text" class="sequence-text">SPOCK</p></span>
           <span id="bang-choice" class="choice"><p id="bang-seq-text" class="sequence-text">BANG</p></span>
+
         </div>
+
         <p class="round">ROUND <span class="roundCounter"></span></p>
         <p class="sheldon-cpu">SHELDON</p>
         <p class="userName"></p>
         <div id="revealWinner">
           <p class="revealwinner"></p>
         </div>
+        <div id="chooseAgain">
+          <p class="chooseagain"></p>
+        </div>
         <div class="back-screen"></div>
         <div class="button-inset"></div>
+
         <button id="rock-button" class="rock-btn user-choice" data-choice="rock" disabled="true">
           <span class="rock-text fa fa-hand-rock-o"></span>
         </button>
@@ -121,22 +130,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Tie</h4>
-        </div>
-        <div class="modal-body">
-          No One Wins! No points rewards! Try again!
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
