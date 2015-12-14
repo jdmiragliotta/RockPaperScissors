@@ -31,7 +31,25 @@
         <div class="top-console"></div>
         <div class="bottom-console"></div>
         <button id="startBtn" class="btn start pulse" data-status="on">START</button>
+        <div class="off-screen"></div>
         <div class="animation-area">
+          <div id="yourWins">
+            <span id="y-one" class=" fa fa-star-o"></span>
+            <span id="y-two"class="fa fa-star-o"></span>
+            <span id="y-three"class="fa fa-star-o"></span>
+            <span id="y-four"class="fa fa-star-o"></span>
+            <span id="y-five"class="fa fa-star-o"></span>
+          </div>
+
+          <div id="sheldonWins">
+            <span id="c-five" class="fa fa-star-o"></span>
+            <span id="c-four" class="fa fa-star-o"></span>
+            <span id="c-three" class="fa fa-star-o"></span>
+            <span id="c-two" class="fa fa-star-o"></span>
+            <span id="c-one" class="fa fa-star-o"></span>
+          </div>
+
+
           <div class="chooseWeapon">
             <span class="wait load fa fa-spinner fa-spin"></span>
             <p class="load load-text">Choose Your Weapon</p>
@@ -56,6 +74,9 @@
         <p class="round">ROUND <span class="roundCounter"></span></p>
         <p class="sheldon-cpu">SHELDON</p>
         <p class="userName"></p>
+        <div id="revealWinner">
+          <p class="revealwinner"></p>
+        </div>
         <div class="back-screen"></div>
         <div class="button-inset"></div>
         <button id="rock-button" class="rock-btn user-choice" data-choice="rock" disabled="true">

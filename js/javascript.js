@@ -14,7 +14,7 @@ $(document).ready(function(){
 
   // Hide msgs
   //$("#gameplay-panel, #pause-screen").hide();
-  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice").hide();
+  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner").hide();
   $("#reveal-screen, #name-form-div, #end-of-round-screen").hide();
   $("#game-over-screen").hide();
 
@@ -28,60 +28,63 @@ $(document).ready(function(){
       animationSequence();
       bindControls();
       
+      
     });
 
 
   function comparisons(){
     // Tie
     if (userChoice === computerChoice){
-      
+      $(".revealwinner").html("Tie!");
 
     // Computer Wins Scenerios 
 
     }else if (userChoice === "rock" && (computerChoice === "paper" || computerChoice === "spock")){
       computerScore++;
-      $(".computerScore").html(computerScore);
+      $(".revealwinner").html("Sheldon Wins!");
    
     }else if (userChoice === "paper" && (computerChoice === "scissors" || computerChoice === "lizard")){
       computerScore++;
-      $(".computerScore").html(computerScore);
+      $(".revealwinner").html("Sheldon Wins!");
       
     }else if (userChoice === "scissors" && (computerChoice === "rock" || computerChoice === "spock")){
       computerScore++;
-      $(".computerScore").html(computerScore);
+      $(".revealwinner").html("Sheldon Wins!");
 
     }else if (userChoice === "lizard" && (computerChoice === "rock" || computerChoice === "scissors")){
       computerScore++;
-      $(".computerScore").html(computerScore);
+      $(".revealwinner").html("Sheldon Wins!");
 
     }else if (userChoice === "spock" && (computerChoice === "lizard" || computerChoice === "paper")){
       computerScore++;
-      $(".computerScore").html(computerScore);
+      $(".revealwinner").html("Sheldon Wins!");
 
     // User Wins Scenerios
 
     }else if (userChoice === "paper" && (computerChoice === "rock" || computerChoice === "spock")){
       userScore++;
-      $(".yourScore").html(userScore);
+      $(".revealwinner").html("You won!");
       
     }else if (userChoice === "scissors" && (computerChoice === "paper" || computerChoice === "lizard")){
       userScore++;
-      $(".yourScore").html(userScore);
+      $(".revealwinner").html("You won!");
       
     }else if (userChoice === "rock" && (computerChoice === "scissors" || computerChoice === "lizard")){
       userScore++;
-      $(".yourScore").html(userScore); 
+      $(".revealwinner").html("You won!"); 
 
     }else if (userChoice === "lizard" && (computerChoice === "spock" || computerChoice === "paper")){
       userScore++;
-      $(".yourScore").html(userScore);
+      $(".revealwinner").html("You won!");
 
     }else if (userChoice === "spock" && (computerChoice === "scissors" || computerChoice === "rock")){
       userScore++;
-      $(".yourScore").html(userScore);
+      $(".revealwinner").html("You won!");
     }
+    setInterval(updateScore, 10000);
     roundCounter+=1;
     $(".roundCounter").html(roundCounter);  
+
   };
 
 
@@ -182,6 +185,7 @@ $(document).ready(function(){
     };
     revealUserChoice();
     revealComputerChoice();
+   
   };
 
   function animationSequence(){
@@ -194,11 +198,37 @@ $(document).ready(function(){
     $("#bang-choice").delay(5750).addClass("fadeIn").show(2).delay(1500).fadeOut(200);
     $("#revealUserChoice").delay(7500).addClass("slideRight").show(2);
     $("#revealComputerChoice").delay(7500).addClass("slideLeft").show(2);
-    
-
+    $("#revealWinner").delay(9000).addClass("fadeIn revealwinner").show(2);
+    $
   };
   
-  
+    function updateScore (){
+      
+        if(computerScore === 1){
+          $("#c-one").removeClass("fa-star-o").addClass("fa-star");  
+          }else if(computerScore === 2){
+            $("#c-two").removeClass("fa-star-o").addClass("fa-star");
+          }else if(computerScore === 3){
+            $("#c-three").removeClass("fa-star-o").addClass("fa-star");
+          }else if(computerScore === 4){
+            $("#c-four").removeClass("fa-star-o").addClass("fa-star");
+          }else if(computerScore === 5){
+            $("#c-five").removeClass("fa-star-o").addClass("fa-star");
+          }else if(userScore === 1){
+          $("#y-one").removeClass("fa-star-o").addClass("fa-star");  
+          }else if(userScore === 2){
+            $("#y-two").removeClass("fa-star-o").addClass("fa-star");
+          }else if(userScore === 3){
+            $("#y-three").removeClass("fa-star-o").addClass("fa-star");
+          }else if(userScore === 4){
+            $("#y-four").removeClass("fa-star-o").addClass("fa-star");
+          }else if(userScore === 5){
+            $("#y-five").removeClass("fa-star-o").addClass("fa-star");
+          };      
+    };   
+
+
+
 
 
 });

@@ -3,7 +3,8 @@ $(document).ready(function() {
       if($(this).attr("data-status") === "on") {
         $(".user-choice").prop("disabled", false);
         $(this).removeClass("pulse");
-        $(".load").fadeIn(3000);
+        $(".off-screen").fadeOut(2000);
+        $(".load").delay(2000).fadeIn(3000);
       }
       
       enableAnimation();
@@ -18,24 +19,7 @@ $(document).ready(function() {
   }
   enableAnimation();
 
-  function userChoice(){
-    $(this).on("click", function loopingAnimation(){
-    $(".rock-pic").fadeIn(3000).delay(1000).fadeOut(2000);
-    setTimeout(function(){
-      $(".paper-pic").fadeIn(3000).delay(1000).fadeOut(2000)
-    }, 2000)
-    setTimeout(function(){
-      $(".scissors-pic").fadeIn(3000).delay(1000).fadeOut(2000)
-    }, 2000)
-    setTimeout(function(){
-      $(".lizard-pic").fadeIn(3000).delay(1000).fadeOut(2000)
-    }, 2000)
-    setTimeout(function(){
-      $(".spock-pic").fadeIn(3000).delay(1000).fadeOut(2000)
-    }, 2000)
-
-    })
-  };
+  
 
 
 

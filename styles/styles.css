@@ -37,7 +37,15 @@ body {
   position: absolute;
   z-index: 2;
 }
-
+.off-screen{
+  background-color: #333;
+  height: 266px;
+  width: 420px;
+  position: absolute;
+  top: 10px;
+  right: 154px;
+  z-index: 1000;
+}
 .back-screen {
   height: 266px;
   width: 420px;
@@ -212,7 +220,7 @@ body {
 .userName {
   position: absolute;
   z-index: 6;
-  top: 252px;
+  top: 232px;
   left: 212px;
   height: 15px;
   width: 100px;
@@ -333,5 +341,27 @@ body {
   position: absolute;
   z-index: 6;
   top: 12px;
-  right: 157px;
+  right: 161px;
+}
+
+#revealWinner{
+  height: 50px;
+  width: 423px;
+  position: absolute;
+  z-index: 6;
+  top: 203px;
+  text-align: center;
+  font-size: 24px;
+  left: 203px;
+}
+
+#yourWins{
+  position: absolute;
+  bottom: 0px;
+}
+
+#sheldonWins{
+  position: absolute;
+  top:20px;
+  right: 7px;
 }
