@@ -9,15 +9,7 @@ $(document).ready(function() {
       enableAnimation();
     });
 
-    $("#resetBtn").on("click", function() {
-      if($(this).attr("data-status") === "on") {
-        $(".user-choice").prop("disabled", false);
-        $(this).removeClass("pulse");
-        $(".off-screen").fadeOut(2000);
-        $(".load").delay(500).fadeIn(500);
-      }
-      enableAnimation();
-    });
+
   
   function enableAnimation() {
     $(".user-choice").on("mouseenter", function() {
@@ -29,13 +21,6 @@ $(document).ready(function() {
   enableAnimation();
 
   
+  
 
-
-
-
-
-
-
-
-
- });
+ });    
