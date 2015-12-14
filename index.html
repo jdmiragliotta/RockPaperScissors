@@ -10,17 +10,9 @@
 
 </head>
 <body>
-
-  
-
-  <div id="game-running">
-    <p> </p>
-  </div>
-
-  <p>Your Score: <span class="yourScore">0</span></p>
-  <p>Computer Score: <span class="computerScore">0</p>
-  <p>Round: <span class="roundCounter">1</span></p>
-
+<header>
+  <h1>ROck, Paper, Scissors, Lizard, Spock!</h1>
+</header>
   <div class="container">
     <div class="row">
     
@@ -82,9 +74,11 @@
         <div id="revealWinner">
           <p class="revealwinner"></p>
         </div>
+
         <div id="chooseAgain">
           <p class="chooseagain"></p>
         </div>
+
         <div class="back-screen"></div>
         <div class="button-inset"></div>
 
@@ -103,6 +97,15 @@
         <button id="spock-button" class="spock-btn user-choice" data-choice="spock" disabled="true">
           <span class="spock-text fa fa-hand-spock-o"></span>
         </button>
+
+        <div id="gameover">
+          <div id="user-go-screen">
+            <p id="userwinner">You are the<br/>MASTER<br/> of the <br/>UNIVERSE</p>
+           </div>
+           <div id="computer-go-screen"> 
+            <p id="computerwinner">Sheldon is the Winner!<br/> Suffer In Silence.</p>
+          </div>
+        </div>
       </div>
     <div class="col-md-2">
     </div> 

@@ -3,6 +3,10 @@ body {
   color:white;
 }
 
+header {
+  height:200px;
+}
+
 .console{
   border-radius: 154px;
   height: 309px;
@@ -33,6 +37,7 @@ body {
   position: absolute;
   z-index: 2;
 }
+
 .off-screen{
   background-color: #333;
   height: 266px;
@@ -42,6 +47,40 @@ body {
   right: 154px;
   z-index: 1000;
 }
+
+#user-go-screen{
+  background-image: url("../images/green.png");
+  height: 266px;
+  width: 420px;
+  position: absolute;
+  top: 10px;
+  right: 154px;
+  z-index: 500;
+}
+
+#computer-go-screen{
+  background-image: url("../images/red.png");
+  height: 266px;
+  width: 420px;
+  position: absolute;
+  top: 10px;
+  right: 154px;
+  z-index: 500;
+}
+
+#computerwinner {
+  text-align: center;
+  display: block;
+  padding-top: 103px;
+  font-size: 30px;
+}
+
+#userwinner{
+  text-align: center;
+  padding-top: 50px;
+  font-size: 30px;
+}
+
 .back-screen {
   height: 266px;
   width: 420px;

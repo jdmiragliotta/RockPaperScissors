@@ -13,20 +13,19 @@ $(document).ready(function(){
   ];
 
   // Hide msgs
-  //$("#gameplay-panel, #pause-screen").hide();
-  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain").hide();
+  
+  $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain #userwinner, #computerwinner, #user-go-screen, #computer-go-screen").hide();
 
-  $(".user-choice").on("click", function(){
+  $(".user-choice").on("click", function (){
       userChoice = $(this).attr("data-choice");
       userThrow = $(this).attr("class");
       computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
       comparisons();
       $(".chooseWeapon").removeClass("load").fadeOut(700);
-      
       animationSequence();
       bindControls();
       setTimeout(updateScore, 10000);
-       
+      
     });
 
 
@@ -187,7 +186,7 @@ $(document).ready(function(){
   };
 
   function animationSequence(){
-    
+    //$(".user-choice").off().removeClass("pulse");
     $("#rock-choice").delay(1000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
     $("#paper-choice").delay(1750).addClass("slideRight").show(1).delay(500).fadeOut(100);
     $("#scissors-choice").delay(2500).addClass("slideLeft").show(1).delay(500).fadeOut(100);
@@ -197,11 +196,10 @@ $(document).ready(function(){
     $("#revealUserChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
     $("#revealComputerChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
     $("#revealWinner").delay(6500).addClass("fadeIn revealwinner").show(2).delay(3000).fadeOut(1000);
-    $("#chooseAgain").delay(9000).html("Choose Again").fadeIn(1000).show(2).delay(2000).hide();
-
-    
-    
+    //$("#chooseAgain").delay(9000).html("Choose Again").fadeIn(1000).show(2).delay(2000).hide();
   };
+
+  
   
   function updateScore (){
     function updateComputer(){
@@ -230,11 +228,28 @@ $(document).ready(function(){
         }else if(userScore === 5){
           $("#y-five").removeClass("fa-star-o").addClass("fa-star");
         };
+
+      determineWinner();  
     };
 
     updateComputer();
-    updateUser();   
+    updateUser();
+    
   }; 
+
+  function determineWinner(){
+    if(computerScore === 1){
+      $("#chooseAgain").hide();
+      $("#computer-go-screen").fadeIn(500);
+      $("#computerwinner").fadeIn(2000);
+    }else if(userScore === 1){
+      $("#chooseAgain").hide();
+      $("#user-go-screen").fadeIn(500);
+      $("#userwinner").fadeIn(2000);
+    }
+  };
+
+  determineWinner();
 
 
 });
