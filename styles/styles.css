@@ -15,6 +15,14 @@ header {
   color:#000;
 }
 
+#left-contour{
+  height: 100px;
+  width: 100px;
+  border: 1px solid yellow;
+  position: absolute;
+
+}
+
 .console{
   border-radius: 154px;
   height: 309px;
@@ -22,6 +30,7 @@ header {
   background-color: black;
   position: absolute;
 }
+
 .top-console{
   border-radius: 18px;
   height: 41px;
@@ -54,7 +63,6 @@ header {
   height: 276px;
   width: 530px;
   position: absolute;
-  
   z-index: 1000;
 }
 

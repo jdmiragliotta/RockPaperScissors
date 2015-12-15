@@ -198,7 +198,7 @@ $(document).ready(function(){
     $("#revealUserChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
     $("#revealComputerChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
     $("#revealWinner").delay(6500).addClass("fadeIn revealwinner").show(2).delay(3000).fadeOut(1000);
-    $("#chooseAgain").delay(9500).fadeIn(1000).show(2).delay(2000).hide();
+    $("#chooseAgain").delay(9500).fadeIn(1000).show(2).delay(1000).fadeOut(500);
     
   };
 
@@ -206,7 +206,7 @@ $(document).ready(function(){
   
   function updateScore (){
     function updateComputer(){
-      if(computerScore === 1){
+      if(computerScore === 5){
         $("#c-one").removeClass("fa-star-o").addClass("fa-star");  
         }else if(computerScore === 2){
           $("#c-two").removeClass("fa-star-o").addClass("fa-star");
@@ -220,7 +220,7 @@ $(document).ready(function(){
     }; 
     
     function updateUser(){
-      if(userScore === 1){
+      if(userScore === 5){
           $("#y-one").removeClass("fa-star-o").addClass("fa-star");  
         }else if(userScore === 2){
           $("#y-two").removeClass("fa-star-o").addClass("fa-star");
@@ -241,33 +241,45 @@ $(document).ready(function(){
   }; 
 
   function determineWinner(){
-    if(computerScore === 5){
+    if(computerScore === 1){
+      $("#chooseAgain").hide();
       $("#computer-go-screen").fadeIn(500);
       $("#computerwinner").fadeIn(500);
       $("#resetBtn").on("click", function(){
-        $("#chooseAgain").hide();
+        
         $("#computer-go-screen").fadeOut(1000);
         userScore = 0;
         computerScore = 0;
         roundCounter = 0;
-        $("#chooseWeapon").fadeIn(500);
+        $(".game-load").fadeIn(500);
         $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
         $("#c-two").removeClass("fa-star").addClass("fa-star-o");
         $("#c-three").removeClass("fa-star").addClass("fa-star-o");
         $("#c-four").removeClass("fa-star").addClass("fa-star-o");
         $("#c-five").removeClass("fa-star").addClass("fa-star-o");
+        $("#y-one").removeClass("fa-star").addClass("fa-star-o");  
+        $("#y-two").removeClass("fa-star").addClass("fa-star-o");
+        $("#y-three").removeClass("fa-star").addClass("fa-star-o");
+        $("#y-four").removeClass("fa-star").addClass("fa-star-o");
+        $("#y-five").removeClass("fa-star").addClass("fa-star-o");
       });
     
-    }else if(userScore === 5){  
+    }else if(userScore === 1){  
+      $("#chooseAgain").hide();
       $("#user-go-screen").fadeIn(500);
       $("#userwinner").fadeIn(500);
       $("#resetBtn").on("click", function(){
-        $("#chooseAgain").hide();
+       
         $("#user-go-screen").fadeOut(1000);
         userScore = 0;
         computerScore = 0;
         roundCounter = 0;
-        $("#chooseWeapon").fadeIn(500);
+        $(".game-load").fadeIn(500);
+        $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
+        $("#c-two").removeClass("fa-star").addClass("fa-star-o");
+        $("#c-three").removeClass("fa-star").addClass("fa-star-o");
+        $("#c-four").removeClass("fa-star").addClass("fa-star-o");
+        $("#c-five").removeClass("fa-star").addClass("fa-star-o");
         $("#y-one").removeClass("fa-star").addClass("fa-star-o");  
         $("#y-two").removeClass("fa-star").addClass("fa-star-o");
         $("#y-three").removeClass("fa-star").addClass("fa-star-o");
