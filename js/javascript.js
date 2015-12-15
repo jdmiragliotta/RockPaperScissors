@@ -206,7 +206,7 @@ $(document).ready(function(){
   
   function updateScore (){
     function updateComputer(){
-      if(computerScore === 5){
+      if(computerScore === 1){
         $("#c-one").removeClass("fa-star-o").addClass("fa-star");  
         }else if(computerScore === 2){
           $("#c-two").removeClass("fa-star-o").addClass("fa-star");
@@ -220,7 +220,7 @@ $(document).ready(function(){
     }; 
     
     function updateUser(){
-      if(userScore === 5){
+      if(userScore === 1){
           $("#y-one").removeClass("fa-star-o").addClass("fa-star");  
         }else if(userScore === 2){
           $("#y-two").removeClass("fa-star-o").addClass("fa-star");
@@ -251,17 +251,7 @@ $(document).ready(function(){
         userScore = 0;
         computerScore = 0;
         roundCounter = 0;
-        $(".game-load").fadeIn(500);
-        $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
-        $("#c-two").removeClass("fa-star").addClass("fa-star-o");
-        $("#c-three").removeClass("fa-star").addClass("fa-star-o");
-        $("#c-four").removeClass("fa-star").addClass("fa-star-o");
-        $("#c-five").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-one").removeClass("fa-star").addClass("fa-star-o");  
-        $("#y-two").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-three").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-four").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-five").removeClass("fa-star").addClass("fa-star-o");
+        removeStars();
       });
     
     }else if(userScore === 5){  
@@ -275,17 +265,7 @@ $(document).ready(function(){
         computerScore = 0;
         roundCounter = 0;
         $(".game-load").fadeIn(500);
-        $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
-        $("#c-two").removeClass("fa-star").addClass("fa-star-o");
-        $("#c-three").removeClass("fa-star").addClass("fa-star-o");
-        $("#c-four").removeClass("fa-star").addClass("fa-star-o");
-        $("#c-five").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-one").removeClass("fa-star").addClass("fa-star-o");  
-        $("#y-two").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-three").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-four").removeClass("fa-star").addClass("fa-star-o");
-        $("#y-five").removeClass("fa-star").addClass("fa-star-o");
-    
+        removeStars();
 
 
       });
@@ -294,7 +274,20 @@ $(document).ready(function(){
 };
 
   determineWinner();
- 
+  
+  function removeStars (){
+    $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
+    $("#c-two").removeClass("fa-star").addClass("fa-star-o");
+    $("#c-three").removeClass("fa-star").addClass("fa-star-o");
+    $("#c-four").removeClass("fa-star").addClass("fa-star-o");
+    $("#c-five").removeClass("fa-star").addClass("fa-star-o");
+    $("#y-one").removeClass("fa-star").addClass("fa-star-o");  
+    $("#y-two").removeClass("fa-star").addClass("fa-star-o");
+    $("#y-three").removeClass("fa-star").addClass("fa-star-o");
+    $("#y-four").removeClass("fa-star").addClass("fa-star-o");
+    $("#y-five").removeClass("fa-star").addClass("fa-star-o");
+  };
+
   
   
 });
