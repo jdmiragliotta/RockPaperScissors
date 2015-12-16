@@ -3,7 +3,8 @@ $(document).ready(function(){
   var computerChoice;
   var userScore = 0;
   var computerScore = 0;
-  var roundCounter = 0;
+  var roundCounter = 1;
+  var animating = false;
   var computerOptions = [
     "rock",
     "paper",
@@ -12,22 +13,28 @@ $(document).ready(function(){
     "spock"
   ];
 
-  // Hide msgs
+  // Hide Animation Divs
   
   $("#rock-choice, #paper-choice, #scissors-choice, #lizard-choice, #spock-choice, #bang-choice, #revealUserChoice, #revealComputerChoice, #revealWinner, #chooseAgain, #userwinner, #computerwinner, #user-go-screen, #computer-go-screen, #chooseWeapon").hide();
 
-  $(".user-choice").on("click", function (){
-      userChoice = $(this).attr("data-choice");
-      //userThrow = $(this).attr("class");
-      computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
-      comparisons();
-      $(".chooseWeapon").removeClass("load").fadeOut(700);
-      animationSequence();
-      bindControls();
-      setTimeout(updateScore, 10000);
-      
-    });
+  // Assigns what button the user clicks on to be compared to in comparison function
+  
+  function userSelection(){
+      if($(this).attr("data-clickable") === "true") {
+        userChoice = $(this).attr("data-choice");
+        computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+        comparisons();
+        $(".chooseWeapon").removeClass("load").fadeOut(700);
+        animationSequence();
+        bindControls();
+        $(".user-choice").attr("data-clickable", false);
+        }
+    };
 
+
+  $(".user-choice").on("click", userSelection);
+
+  // Determines the winning scenerios
 
   function comparisons(){
     // Tie
@@ -79,14 +86,12 @@ $(document).ready(function(){
       $(".revealwinner").html("You won!");
     };
 
-    roundCounter+=1;
-    $(".roundCounter").html(roundCounter);  
+    // roundCounter+=1;
+    // $(".roundCounter").html(roundCounter);  
 
   };
 
-
-
-
+  //binds the appropriete images based on user selectiion and computer selection for aninmation
 
   function bindControls(){
     function revealUserChoice(){
@@ -187,22 +192,43 @@ $(document).ready(function(){
     
   };
 
+
   function animationSequence(){
-    
-    $("#rock-choice").delay(1000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
-    $("#paper-choice").delay(1750).addClass("slideRight").show(1).delay(500).fadeOut(100);
-    $("#scissors-choice").delay(2500).addClass("slideLeft").show(1).delay(500).fadeOut(100);
-    $("#lizard-choice").delay(3250).addClass("slideRight").show(1).delay(500).fadeOut(100);
-    $("#spock-choice").delay(4000).addClass("slideLeft").show(1).delay(500).fadeOut(100);
-    $("#bang-choice").delay(4750).addClass("fadeIn").show(2).delay(1500).fadeOut(200);
-    $("#revealUserChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
-    $("#revealComputerChoice").delay(6500).addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
-    $("#revealWinner").delay(6500).addClass("fadeIn revealwinner").show(2).delay(3000).fadeOut(1000);
-    $("#chooseAgain").delay(9500).fadeIn(1000).show(2).delay(1000).fadeOut(500);
-    
+    if( animating !== true){
+      animating = true;
+      
+        $("#rock-choice").delay(1000).addClass("slideLeft").show(1).delay(500).fadeOut(100, function(){
+          $("#paper-choice").addClass("slideRight").show(1).delay(500).fadeOut(100, function(){
+            $("#scissors-choice").addClass("slideLeft").show(1).delay(500).fadeOut(100, function(){
+              $("#lizard-choice").addClass("slideRight").show(1).delay(500).fadeOut(100, function(){
+                $("#spock-choice").addClass("slideLeft").show(1).delay(500).fadeOut(100, function(){
+                  $("#bang-choice").addClass("fadeIn").show(2).delay(1500).fadeOut(200, function(){
+                    $("#revealUserChoice").addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
+                    $("#revealComputerChoice").addClass("fadeIn").show(2).delay(3000).fadeOut(1000);
+                    $("#revealWinner").addClass("fadeIn revealwinner").show(2).delay(3000).fadeOut(1000, function(){
+                      updateScore();
+                      
+                      $("#chooseAgain").fadeIn(1000).show(2).delay(1000).fadeOut(1000, function(){
+                        roundCounter++;
+                        $(".roundCounter").html(roundCounter); 
+                        $(".user-choice").attr("data-clickable", true); 
+                        animating = false;
+
+                        
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          }); 
+        });
+    }  
   };
 
-  
+
+
+  // Added fa-star class when userScore and computerScore increments  by one based on the comparison function results
   
   function updateScore (){
     function updateComputer(){
@@ -240,13 +266,14 @@ $(document).ready(function(){
 
   }; 
 
+// Determines the winner and returns the homescreen to play again.
+
   function determineWinner(){
     if(computerScore === 5){
       $("#chooseAgain").hide();
       $("#computer-go-screen").fadeIn(500);
       $("#computerwinner").fadeIn(500);
       $("#resetBtn").on("click", function(){
-        
         $("#computer-go-screen").fadeOut(1000);
         userScore = 0;
         computerScore = 0;
@@ -259,7 +286,6 @@ $(document).ready(function(){
       $("#user-go-screen").fadeIn(500);
       $("#userwinner").fadeIn(500);
       $("#resetBtn").on("click", function(){
-       
         $("#user-go-screen").fadeOut(1000);
         userScore = 0;
         computerScore = 0;
@@ -274,7 +300,9 @@ $(document).ready(function(){
 };
 
   determineWinner();
-  
+
+
+    // removes fa-star class to star new game
   function removeStars (){
     $("#c-one").removeClass("fa-star").addClass("fa-star-o");  
     $("#c-two").removeClass("fa-star").addClass("fa-star-o");

@@ -89,13 +89,14 @@
 
         
 
-          <p class="round">ROUND <span class="roundCounter"></span></p>
+          <p class="round">ROUND <span class="roundCounter">1</span></p>
           <p class="sheldon-cpu">SHELDON</p>
           <p class="userName"></p>
           
           
 
           <div id="chooseAgain">
+            <span class="wait reload game-load fa fa-spinner fa-spin"></span>
             <p class="chooseagain">Choose Again</p>
           </div>
         </div>
@@ -119,19 +120,19 @@
 
         <div class="button-inset"></div>
 
-        <button id="rock-button" class="rock-btn user-choice" data-choice="rock" disabled="true">
+        <button id="rock-button" class="rock-btn user-choice" data-choice="rock" data-clickable="false" disabled="true">
           <span class="rock-text fa fa-hand-rock-o"></span>
         </button>
-        <button id="paper-button" class="paper-btn user-choice" data-choice="paper" disabled="true">
+        <button id="paper-button" class="paper-btn user-choice" data-choice="paper" data-clickable="false" disabled="true">
           <span class="paper-text fa fa-hand-paper-o"></span>
         </button>
-        <button id="scissors-button" class="scissors-btn user-choice" data-choice="scissors" disabled="true">
+        <button id="scissors-button" class="scissors-btn user-choice" data-choice="scissors" data-clickable="false" disabled="true">
           <span class="scissors-text fa fa-hand-scissors-o"></span>
         </button>
-        <button id="lizard-button" class="lizard-btn user-choice" data-choice="lizard" disabled="true">
+        <button id="lizard-button" class="lizard-btn user-choice" data-choice="lizard" data-clickable="false" disabled="true">
           <span class="lizard-text fa fa-hand-lizard-o"></span>
         </button>
-        <button id="spock-button" class="spock-btn user-choice" data-choice="spock" disabled="true">
+        <button id="spock-button" class="spock-btn user-choice" data-choice="spock" data-clickable="false" disabled="true">
           <span class="spock-text fa fa-hand-spock-o"></span>
         </button>
 

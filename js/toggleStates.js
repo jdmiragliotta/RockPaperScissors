@@ -5,6 +5,7 @@ $(document).ready(function() {
         $(this).removeClass("pulse");
         $(".off-screen").fadeOut(2000);
         $(".load").delay(500).fadeIn(500);
+        $(".user-choice").attr("data-clickable", true);
       }
       enableAnimation();
     });

@@ -331,7 +331,16 @@ header {
   right: 210px;
   font-size: 120px;
   color: white;
-  
+
+}
+
+.reload {
+  position: absolute;
+  z-index: 5;
+  top: -135px;
+  right: 150px;
+  font-size: 120px;
+  color: white;
 }
 
 .load-text{
@@ -482,7 +491,7 @@ header {
   right: 5px;
 }
 
-#revealWinner, #chooseAgain{
+#revealWinner {
   height: 50px;
   width: 423px;
   position: absolute;
@@ -492,6 +501,18 @@ header {
   font-size: 24px;
   left: 48px;
 }
+
+#chooseAgain{
+  height: 350px;
+  width: 423px;
+  position: absolute;
+  z-index: 6;
+  top: 203px;
+  text-align: center;
+  font-size: 24px;
+  left: 48px;
+}
+
 
 #yourWins{
   position: absolute;
